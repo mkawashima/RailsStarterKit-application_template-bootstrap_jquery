@@ -9,7 +9,7 @@ end
 
 run "yarn add bootstrap jquery popper.js"
 
-config/webpack/environment.js
+# config/webpack/environment.js
 insert_into_file "config/webpack/environment.js", after: /@rails\/webpacker.*\n/ do
   <<-WEBPACKJS
 
@@ -22,7 +22,7 @@ environment.plugins.append("Provide", new webpack.ProvidePlugin({
   WEBPACKJS
 end
 
-app/javascript/packs/application.js
+# app/javascript/packs/application.js
 insert_into_file "app/javascript/packs/application.js", before: /\/\/ Uncomment to copy all static/ do
   <<-PACKAPPJS
 import 'bootstrap';
