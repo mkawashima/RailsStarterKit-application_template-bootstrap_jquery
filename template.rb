@@ -38,9 +38,8 @@ gsub_file "config/webpacker.yml", /resolved_paths: \[\]/, "resolved_paths: ['app
 
 # app/javascript/stylesheets
 run "mkdir app/javascript/stylesheets"
-inside 'app/views/layouts' do
-  remove_file 'application.html.erb'
-  copy_file "#{template_root}/app/javascript/stylesheets/application.scss", 'application.scss', force: true
+inside 'app/javascript/stylesheets' do
+  copy_file "#{template_root}/app/javascript/stylesheets/application.scss.tt", 'application.scss', force: true
 end
 run "touch app/javascript/stylesheets/_bootstrap_custom.scss"
 run "touch app/javascript/stylesheets/styles.scss"
