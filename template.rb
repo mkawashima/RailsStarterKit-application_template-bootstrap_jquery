@@ -40,5 +40,5 @@ gsub_file "config/webpacker.yml", /resolved_paths: \[\]/, "resolved_paths: ['app
 run "mkdir app/javascript/stylesheets"
 run "touch app/javascript/stylesheets/application.scss"
 append_to_file 'app/javascript/stylesheets/application.scss' do
-  '@import "bootstrap";'
+  '@import "bootstrap";\n'
 end
