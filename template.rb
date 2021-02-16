@@ -38,8 +38,8 @@ gsub_file "config/webpacker.yml", /resolved_paths: \[\]/, "resolved_paths: ['app
 
 # app/javascript/stylesheets
 run "mkdir app/javascript/stylesheets"
-inside 'app/javascript/stylesheets' do
-  copy_file "#{template_root}/app/javascript/stylesheets/application.scss.tt", 'application.scss', force: true
+run "touch app/javascript/stylesheets/application.scss"
+append_to_file 'app/javascript/stylesheets/application.scss' do
+  '@import "bootstrap";'
 end
-run "touch app/javascript/stylesheets/_bootstrap_custom.scss"
 run "touch app/javascript/stylesheets/styles.scss"
