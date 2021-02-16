@@ -42,4 +42,3 @@ run "touch app/javascript/stylesheets/application.scss"
 append_to_file 'app/javascript/stylesheets/application.scss' do
   '@import "bootstrap";'
 end
-run "touch app/javascript/stylesheets/styles.scss"
